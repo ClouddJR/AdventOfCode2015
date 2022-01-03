@@ -1,5 +1,7 @@
 package com.clouddjr.advent2015
 
+import com.clouddjr.advent2015.utils.permutations
+
 class Day09(input: List<String>) {
 
     private val distances = input.associateBy(
@@ -17,10 +19,5 @@ class Day09(input: List<String>) {
         return locations.permutations().map { permutation ->
             permutation.windowed(2).sumOf { distances.getValue(it.toSet()) }
         }
-    }
-
-    private fun List<String>.permutations(): Set<List<String>> {
-        if (size == 1) return setOf(this)
-        return fold(emptySet()) { acc, s -> acc + (this - s).permutations().map { it + s } }
     }
 }
