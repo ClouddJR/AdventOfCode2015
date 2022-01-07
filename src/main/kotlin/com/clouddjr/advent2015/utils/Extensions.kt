@@ -14,3 +14,5 @@ fun <T> List<T>.combinations(current: List<T> = emptyList()): List<List<T>> {
 fun String.substringBetween(startDelimiter: String, endDelimiter: String): String {
     return substringAfter(startDelimiter).substringBefore(endDelimiter)
 }
+
+fun Boolean.toInt() = if (this) 1 else 0
