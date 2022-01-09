@@ -1,7 +1,6 @@
 package com.clouddjr.advent2015
 
 import com.clouddjr.advent2015.utils.Point2D
-import com.clouddjr.advent2015.utils.toInt
 
 class Day18(input: List<String>) {
 
@@ -23,7 +22,7 @@ class Day18(input: List<String>) {
         return (1..steps).fold(initialConfig) { config, _ ->
             config.mapValues { (point, isOn) ->
                 if (freezeCorners && point in corners) return@mapValues true
-                when (point.neighboursWithDiagonals().sumOf { config.getOrDefault(it, false).toInt() }) {
+                when (point.neighboursWithDiagonals().count { config.getOrDefault(it, false) }) {
                     3 -> true
                     2 -> isOn
                     else -> false
