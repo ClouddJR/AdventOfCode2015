@@ -1,6 +1,6 @@
 package com.clouddjr.advent2015
 
-import com.clouddjr.advent2015.utils.combinations
+import com.clouddjr.advent2015.utils.allCombinations
 
 class Day17(private val input: List<Int>) {
 
@@ -13,5 +13,5 @@ class Day17(private val input: List<Int>) {
         }
     }
 
-    private fun correctCombinations() = input.combinations().filter { it.sum() == 150 }
+    private fun correctCombinations() = input.allCombinations().filter { it.sum() == 150 }
 }
