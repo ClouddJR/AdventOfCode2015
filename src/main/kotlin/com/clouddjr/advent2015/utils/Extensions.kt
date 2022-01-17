@@ -24,4 +24,6 @@ fun String.substringBetween(startDelimiter: String, endDelimiter: String): Strin
     return substringAfter(startDelimiter).substringBefore(endDelimiter)
 }
 
+fun Int.sequenceSum() = (1 + this) * this / 2
+
 fun Boolean.toInt() = if (this) 1 else 0
